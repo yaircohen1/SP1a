@@ -1,0 +1,5 @@
+gcc -Wall -g -c main.c
+gcc -Wall -g -c basicClassification.c
+gcc -Wall -g -c advancedClassificationRecursion.c
+gcc -shared -fPIC -o libclassrec.so basicClassification.o advancedClassificationRecursion.o -lm
+gcc -Wall -g main.o ./libclassrec.so -o maindrec
