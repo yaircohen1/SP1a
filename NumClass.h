@@ -4,5 +4,11 @@
         int isPalindrome(int);
         int isPrime(int);
         int isStrong(int);
+        int power(int,int);
+        int countDigits(int);
+        int checkIsPalindrome(int, int);
+        int CalArm(int, int);
+        int factorial(int);
 
-         #endif
+
+    #endif
