@@ -50,4 +50,4 @@ maindrec: main.o libclassrec.so
 clean: 
 			rm -f mains maindloop maindrec *.o *.a *.so	*.gch libclassloops.* libclassrec.*
 #PHONY
-.PHONY: clean loops recursives recursived loopd 										
+.PHONY: all clean 										
