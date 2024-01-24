@@ -47,7 +47,7 @@ int isPalindrome(int num)
 int CalArm(int num , int digits){ 
     if(num==0)
         return 0; // If the num is 0 so there's no sum act
-    return (power(num%10, digits) + CheckisArm(num/10,digits)); // Start with the unit and than contiue
+    return (power(num%10, digits) + CalArm(num/10,digits)); // Start with the unit and than contiue
 }
 
 

@@ -1,11 +1,8 @@
-#include <stdio.h>
+    #ifndef NUM_CLASS_H
+    #define NUM_CLASS_H
+        int isArmstrong(int);
+        int isPalindrome(int);
+        int isPrime(int);
+        int isStrong(int);
 
-#ifndef NUMCLASS_H_
-#define NUMCLASS_H_
-
-int isArmstrong(int);
-int isPalindrome(int);
-int isPrime(int);
-int isStrong(int);
-
-#endif
+         #endif

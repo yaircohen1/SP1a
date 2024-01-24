@@ -6,8 +6,7 @@ int isPrime(int num)
         return 1; // 1 is primary just for this exercise
     if (num<0)
         return 0;
-    else 
-        for(int i=2; i<num;i++)
+    for(int i=2; i<num;i++)
         {
             if((num%i)==0)
             {
@@ -23,8 +22,8 @@ int factorial(int num)
     int mult=1;
     if (num==0)
         return 1;
-    else 
-        for (int i=1; i<=num; i++)
+
+    for (int i=1; i<=num; i++)
         {
             mult=mult*i;
         }
