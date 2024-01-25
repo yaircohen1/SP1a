@@ -14,33 +14,43 @@ int power(int num, int k)
 // Function to calculate the number of digits in a number
 int countDigits(int num)
 {
+    int count=0;
     if (num == 0)
         return 0;
-    return 1 + countDigits(num/10);
+    return count=1+countDigits(num/10);
 }
 
-// Recursive function to check if a number is a palindrome with 2 peremters
-int checkIsPalindrome(int num, int numDigits)
+// calculate the reverse num of the original num
+int reverse(int num)
 {
-    // Base case: a single-digit is a palindrome
-    if (numDigits == 1)
-        return 1;
-
-    // Base case: check if the first and last digits are the same
-    if (num / power(10, numDigits - 1) == num % 10)
+    int newNum = 0, temp = num, digit = countDigits(num)-1;
+    while(temp != 0)
     {
-        // Remove the first and last digits and check the remaining number
-        return checkIsPalindrome((num % power(10, numDigits - 1)) / 10, numDigits - 2);
-    }
-
-    return 0; // Not a palindrome
+        newNum = newNum + temp%10*power(10,digit);
+        temp = temp/10;
+        digit--;
+    }  
+    return newNum;  
 }
 
-// The function with the sign that you want
+// Recursive function to check if a number is a palindrome with 2 peremters (the original num and the reverse num)
+int checkIsPalindrome(int reverse, int num)
+{
+    if(num == 0)
+        return 1;
+    if((num%10) != (reverse%10))
+        return 0;
+    else
+        return checkIsPalindrome(reverse/10, num/10);
+}
+
+//Recursive function with the sign that you want
 int isPalindrome(int num)
 {
-    int numDigits = countDigits(num);
-    return checkIsPalindrome(num, numDigits);
+    int newNum = reverse(num);
+    if(checkIsPalindrome(newNum, num))
+        return 1;
+    return 0;
 }
 
 // Recursive Function with 2 peremetrs to calculate Armstrong of the num
